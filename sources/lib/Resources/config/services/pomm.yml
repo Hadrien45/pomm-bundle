@@ -21,6 +21,11 @@ services:
         arguments: ['@pomm']
         tags:
             - { name: "property_info.type_extractor" }
+    pomm.validator.unique_object:
+        class: 'PommProject\SymfonyBridge\Validator\Constraints\UniqueObjectValidator'
+        arguments: ['@pomm']
+        tags:
+            - { name: "validator.constraint_validator" }
 
     pomm.commands.inspect_config:
         class: 'PommProject\Cli\Command\InspectConfig'
